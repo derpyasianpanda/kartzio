@@ -1,4 +1,4 @@
 # Kartz.io
 
-An Web Based Online Multiplayer Kart Racing Game
+A Web Based Online Multiplayer Kart Racing Game
 
