@@ -16,7 +16,7 @@ shape = SubResource( 1 )
 transform = Transform( 1.53846, 0, 0, 0, 1.66667, 0, 0, 0, 1, 0, -1.08333, 0 )
 
 [node name="FrontCast" type="RayCast" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29938e-05, 0.308238, 0.771148 )
 
 [node name="BackCast" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.8 )
