@@ -31,10 +31,16 @@ func get_input(delta):
 	# Turning Velocity Redirection: JANK AF
 	var forward2D = Vector2(forward.x, forward.z)
 	var direction2D = Vector2(velocity.x, velocity.z)
-	var velocity_forward_angle = abs(rad2deg(forward2D.angle_to(direction2D)))
-	print(velocity_forward_angle, direction)
+	var angle_diff = abs(rad2deg(forward2D.angle_to(direction2D)))
 
-	direction2D = direction2D.project(forward2D) * ((1 - velocity_forward_angle / 180) if direction >= 0 else velocity_forward_angle / 180)
+	# TODO: Find out why this is so low
+	print(angle_diff)
+
+	var new_direction = forward2D.normalized().linear_interpolate(forward2D, 0.6)
+
+	# What in the actual frick is this
+	direction2D = new_direction * direction2D.length() * \
+		min(1, ((1 - angle_diff / 270) if direction >= 0 else angle_diff / 270))
 
 	velocity.x = direction2D.x
 	velocity.z = direction2D.y
